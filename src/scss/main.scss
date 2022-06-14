@@ -20,7 +20,6 @@ p {
   margin: 0px;
   padding: 0px;
 }
-
 ul,
 ol,
 li {
@@ -86,12 +85,11 @@ body {
   background: $body-bg;
   color: $font-dark;
 }
-
 .d-none {
   display: none;
 }
 
-// number
+// step number
 @mixin getStepNums($num) {
   @for $i from 1 through $num {
     &:nth-child(#{$i}) .circle::after {
@@ -142,7 +140,7 @@ body {
     }
     .item {
       width: 100%;
-      background-color: $white;
+      background: $white;
       opacity: 0;
       z-index: 1;
       .item-list {
@@ -317,7 +315,7 @@ body {
 
                     & > .frame {
                       @extend %input-select-style;
-                      background-color: transparent;
+                      background: transparent;
                       @extend %initial-style;
                     }
                   }
@@ -643,21 +641,20 @@ body {
         all: unset;
       }
       .item {
-        display: grid;
+        display: flex;
+        justify-content: space-between;
         margin: 16px 0;
         grid-gap: 1rem;
 
-        .item-list,
-        .item-icon {
+        .item-list {
           all: unset;
           margin: 0 32px 0 0;
           cursor: pointer;
         }
-        .item-list-wrapper {
-          grid-column: 1/5;
-        }
+
         .item-icon {
-          grid-column: 13;
+          all: unset;
+          cursor: pointer;
 
           .item-icon-wrapper {
             display: inline-block;

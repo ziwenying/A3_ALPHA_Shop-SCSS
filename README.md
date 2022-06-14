@@ -1,24 +1,25 @@
 # Alpha Shop
 ## 介紹
-check all my favorite restaurant list and the information about these restaurants
+Alpha Shop 購物車
+內含：導覽列、訂購表單、購物車、頁尾
 
 ## 功能特點
-- looking up all my favorite restaurant list
-- searching restaurant by title and category
-- checking the details about restaurants, such as name, category, phone number, address, etc.
+- 導覽列：在窄螢幕會縮成漢堡排。
+- 訂購表單分三步驟，含寄送地址、運送方式、付款資訊，以「上一步」和「下一步」按鈕切換，且不會產生頁面跳轉的情況。
+- 購物車頁面有兩樣商品，並顯示數量、價格、總金額；可使用「+」、「-」按鈕來增加數量，總金額會隨之調整。
+- 頁尾在窄螢幕不顯示。
 
 ## 安裝
-1. Install node.js and npm
-2. Clone this project to local
-3. Open this file, and type 'npm install' in terminal
-4. After installing, type 'npm run dev' in terminal
-5. Seeing 'Express is listening on http://localhost:3000' means it works
-6. visit the web 'http://localhost:3000'
-7. Press 'ctrl + c' to stop the server 
+1. Clone 此專案到本地。
+2. 在終端機使用 'npm install'。
+3. 使用 npm run watch 開始執行。
+
 
 ## 開發工具
-- Node.js 14.16.0
-- Express 4.17.2
-- Express-Handlebars 3.3.0
-- Bootstrap 5.1.3
-- Font-awesome 5.8.1
+- css-loader ^3.5.3
+- mini-css-extract-plugin ^0.9.0
+- node-sass ^4.14.1
+- sass ^1.26.7
+- sass-loader ^8.0.2
+- webpack ^4.43.0
+- webpack-cli ^3.3.11

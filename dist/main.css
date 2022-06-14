@@ -117,7 +117,7 @@ body {
       margin: 16px; }
     .main .nav .item {
       width: 100%;
-      background-color: #fff;
+      background: #fff;
       opacity: 0;
       z-index: 1; }
       .main .nav .item .item-list {
@@ -248,7 +248,7 @@ body {
                 border-color: #000 transparent transparent transparent;
                 z-index: -1; }
               .main .checkout .container .left-content .form-panel .form-container .part .gender-name .gender .select-wrapper > .frame {
-                background-color: transparent; }
+                background: transparent; }
           .main .checkout .container .left-content .form-panel .form-container .part .gender-name .name {
             max-width: 100%;
             flex-grow: 2;
@@ -439,18 +439,17 @@ body {
       .main .nav .item-top {
         all: unset; }
       .main .nav .item {
-        display: grid;
+        display: flex;
+        justify-content: space-between;
         margin: 16px 0;
         grid-gap: 1rem; }
-        .main .nav .item .item-list,
-        .main .nav .item .item-icon {
+        .main .nav .item .item-list {
           all: unset;
           margin: 0 32px 0 0;
           cursor: pointer; }
-        .main .nav .item .item-list-wrapper {
-          grid-column: 1/5; }
         .main .nav .item .item-icon {
-          grid-column: 13; }
+          all: unset;
+          cursor: pointer; }
           .main .nav .item .item-icon .item-icon-wrapper {
             display: inline-block; }
       .main .nav .logo {

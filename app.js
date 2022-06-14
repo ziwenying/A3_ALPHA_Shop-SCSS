@@ -10,7 +10,6 @@ const total = document.querySelector('.total')
 
 let totalNumber = 5298
 let step = 1
-
 let shipFee = 0
 
 // handle circle-step, form, btn
@@ -19,13 +18,13 @@ function changeStepPage(e) {
   if (e.target.classList.contains('btn-next-center') && step < 3) {
     step += 1
     if (step === 3) {
+      // circle step
       stepContainer.children[1].children[0].classList.add('checked')
       stepContainer.children[2].children[0].classList.add('active')
       stepContainer.children[2].children[1].classList.add('active')
       // form
       formPanel.children[1].classList.add('d-none')
       formPanel.children[2].classList.remove('d-none')
-
       // btn
       nextBtn.children[0].innerText = "確認下單"
 
@@ -73,7 +72,7 @@ function changeStepPage(e) {
 function controlBtn(e) {
   if (e.target.classList.contains('click-shipment')) {
     // 選 dhl
-    if (e.target.classList.contains('dhl')) {
+    if (e.target.classList.contains('dhl') && shipFee === 0) {
       // active >>外框; 
       e.target.classList.add('active')
       document.querySelector('.normal').classList.remove('active')
