@@ -66,15 +66,56 @@ input:invalid {
 }
 
 /* basic setting*/
-$body-bg: #fff;
-$font-dark: #000;
-$font-gray: #808080;
-$white: #fff;
-$dark-gray: #2A2A2A;
-$light-gray: #AFB1BD;
-$light-light-gray: #E6E6EB;
-$pink: #F67599;
-$footer-bg: #F6F7F8;
+:root {
+  --body-bg: #fff;
+  --font-dark: #000;
+  --font-gray: #808080;
+  --white: #fff;
+  --dark-gray: #2A2A2A;
+  --light-gray: #AFB1BD;
+  --light-light-gray: #E6E6EB;
+  --pink: #F67599;
+  --footer-bg: #F6F7F8;
+  --divider: #E6E6EB;
+  --bucket-bg: #fff;
+  --circle-bg-active: #2A2A2A;
+  --circle-text-line: #AFB1BD;
+  --circle-text-line-active: #2A2A2A;
+  --circle-checked-outline: #2A2A2A;
+  --select-label: #000;
+
+  --logo-url: url('https://i.ibb.co/FHjwPW4/logo.png');
+  --arrow-url: url('https://i.ibb.co/SXzkcjK/arrow01.png');
+  --search-url: url('https://i.ibb.co/0JS50gX/icon01.png');
+  --cart-url: url('https://i.ibb.co/Jtz2W0B/icon02.png');
+  --mode-url: url('https://i.ibb.co/N1NSSy8/icon03.png');
+}
+
+:root[data-theme="dark"] {
+  --body-bg: #000;
+  --font-dark: #fff;
+  --font-gray: #808080;
+  --white: #fff;
+  --dark-gray: #fff;
+  --light-gray: #AFB1BD;
+  --light-light-gray: #E6E6EB;
+  --pink: #F67599;
+  --footer-bg: #333333;
+  --divider: #2A2A2A;
+  --bucket-bg: #2A2A2A;
+  --circle-bg-active: #fff;
+  --circle-text-line: #808080;
+  --circle-text-line-active: #fff;
+  --circle-checked-outline: #2A2A2A;
+  --select-label: #808080;
+
+  --logo-url: url('https://i.ibb.co/RDt5Rzt/dark-logo.png');
+  --arrow-url: url('https://i.ibb.co/WD095Sq/dark-arrow01.png');
+  --search-url: url('https://i.ibb.co/NtK1VnK/dark-icon01.png');
+  --cart-url: url('https://i.ibb.co/VJdffVh/dark-icon02.png');
+  --mode-url: url('https://i.ibb.co/X84XNz3/icon04.png');
+}
+
 
 html {
   font-size: 16px;
@@ -82,8 +123,8 @@ html {
 }
 body {
   height: 100%;
-  background: $body-bg;
-  color: $font-dark;
+  background: var(--body-bg);
+  color: var(--font-dark);
 }
 .d-none {
   display: none;
@@ -107,11 +148,13 @@ body {
   padding: 0 0 0 18px;
   width: 100%;
   height: 40px;
-  border: 1px $dark-gray solid;
+  border: 1px var(--dark-gray) solid;
   border-radius: 4px;
+  color: var(--circle-bg-active);
+  background: transparent;
   &:hover,
   &:focus {
-    border: 2px $font-dark solid;
+    border: 2px var(--font-dark) solid;
   }
 }
 
@@ -119,7 +162,7 @@ body {
   display: block;
   font-size: 12px;
   font-weight: 700;
-  color: $font-gray;
+  color: var(--font-gray);
 }
 
 /* starting */
@@ -137,16 +180,18 @@ body {
       width: 136px;
       height: 24px;
       margin: 16px;
+      background: var(--logo-url);
+      background-size: 136px 24px;
     }
     .item {
       width: 100%;
-      background: $white;
+      background: var(--body-bg);
       opacity: 0;
       z-index: 1;
       .item-list {
         text-align: center;
         padding: 24px;
-        border-bottom: 1px solid rgba(42, 42, 42, 0.1);
+        border-bottom: 1px var(--light-light-gray) solid;
       }
       .item-icon {
         display: flex;
@@ -161,6 +206,18 @@ body {
       .icon {
         margin: 0 12px 0 12px;
         cursor: pointer;
+      }
+      .search {
+        background: var(--search-url);
+        background-size: 24px;
+      }
+      .cart {
+        background: var(--cart-url);
+        background-size: 24px;
+      }
+      .mode {
+        background: var(--mode-url);
+        background-size: 24px;
       }
     }
     .item-top {
@@ -197,7 +254,7 @@ body {
         left: 0;
         content: "";
         height: 3px;
-        background: $dark-gray;
+        background: var(--dark-gray);
       }
       .hamburger {
         width: 20px;
@@ -236,45 +293,46 @@ body {
               position: relative;
               width: 32px;
               height: 32px;
-              border: 1px $light-gray solid;
-              color: $light-gray;
+              border: 1px var(--circle-text-line) solid;
+              color: var(--circle-text-line);
               border-radius: 50%;
 
               .line {
                 position: absolute;
                 width: 60px;
                 height: 2px;
-                background: $light-gray;
+                background: var(--circle-text-line);
                 left: 10vw;
               }
               .line.active {
-                background: $dark-gray;
+                background: var(--circle-text-line-active);
               }
               &.active {
-                border: 1px $dark-gray solid;
+                border: 1px var(--circle-text-line-active) solid;
               }
             }
 
             @include getStepNums(3);
 
             &:nth-child(1) .circle {
-              background: $font-dark;
+              background: var(--circle-checked-outline);
             }
             &:nth-child(1) .circle::after {
-              color: $white;
+              color: var(--white);
             }
             .circle-text {
               display: none;
             }
             .checked.circle::after {
               content: "\2714";
-              color: $body-bg;
+              color: var(--white);
             }
             .checked.active {
-              background: $font-dark;
+              border: 1px var(--circle-checked-outline) solid;
+              background: var(--circle-checked-outline);
             }
             .active {
-              color: $dark-gray;
+              color: var(--circle-bg-active);
             }
           }
         }
@@ -309,13 +367,12 @@ body {
                       content: "";
                       border-style: solid;
                       border-width: 6px 5px 0 5px;
-                      border-color: $font-dark transparent transparent transparent;
+                      border-color: var(--font-dark) transparent transparent transparent;
                       z-index: -1;
                     }
 
                     & > .frame {
                       @extend %input-select-style;
-                      background: transparent;
                       @extend %initial-style;
                     }
                   }
@@ -351,7 +408,7 @@ body {
                       content: "";
                       border-style: solid;
                       border-width: 6px 5px 0 5px;
-                      border-color: $font-dark transparent transparent transparent;
+                      border-color: var(--font-dark) transparent transparent transparent;
                       z-index: -1;
                     }
                   }
@@ -366,7 +423,6 @@ body {
                   padding: 16px 0 0 0;
                 }
                 .frame {
-                  background: transparent;
                   @extend %initial-style;
                   @extend %input-select-style;
                 }
@@ -389,15 +445,15 @@ body {
                 justify-content: space-between;
                 align-items: center;
                 padding: 24px 0 0 0;
-                border: 1px $light-light-gray solid;
+                border: 1px var(--circle-text-line) solid;
                 border-radius: 4px;
                 padding: 11px 34px;
                 cursor: pointer;
                 input:checked {
-                  border: 1px $font-dark solid;
+                  border: 1px var(--font-dark) solid;
                 }
                 &:hover {
-                  border: 1px $font-dark solid;
+                  border: 1px var(--font-dark) solid;
                 }
 
                 .shipment-option {
@@ -410,9 +466,11 @@ body {
                   &[type="radio"] {
                     @extend %initial-style;
                     border-radius: 50%;
+                    background: var(--footer-bg);
 
                     &:checked {
-                      box-shadow: inset 0 0 0 5px $dark-gray;
+                      box-shadow: inset 0 0 0 5px var(--dark-gray);
+
                     }
                   }
                 }
@@ -429,17 +487,19 @@ body {
                   }
                   p:nth-child(2) {
                     font-size: 12px;
+                    color: var(--select-label);
                   }
                 }
                 .ship-detail {
                   font-size: 12px;
+
                 }
               }
               .shipment:nth-child(2) {
                 margin: 0 0 24px 0;
               }
               .shipment.active {
-                border: 1px $dark-gray solid;
+                border: 1px var(--dark-gray) solid;
               }
 
               /* part three */
@@ -451,11 +511,7 @@ body {
                 }
                 .frame {
                   @extend %initial-style;
-                  padding: 0 0 0 18px;
-                  width: 100%;
-                  height: 40px;
-                  border: 1px $dark-gray solid;
-                  border-radius: 4px;
+                  @extend %input-select-style
                 }
               }
               .card,
@@ -467,11 +523,7 @@ body {
                 }
                 .frame {
                   @extend %initial-style;
-                  width: 100%;
-                  height: 40px;
-                  padding: 0 0 0 18px;
-                  border: 1px $dark-gray solid;
-                  border-radius: 4px;
+                  @extend %input-select-style
                 }
               }
               .date-cvc {
@@ -508,12 +560,13 @@ body {
             height: 100%;
             margin: 24px 0 0 0;
             padding: 24px 0 0 0;
-            border-top: 2px $light-light-gray solid;
+            border-top: 2px var(--divider) solid;
 
             .btn-back {
               width: 100%;
               height: 46px;
-              background: $white;
+              background: var(--body-bg);
+              color: var(--font-dark);
               font-size: 1rem;
               border-radius: 8px;
 
@@ -522,9 +575,11 @@ body {
                 justify-content: center;
                 align-items: center;
 
-                .arrow {
+                &.arrow {
                   width: 20px;
                   height: 9px;
+                  background: var(--arrow-url);
+                  background-size: 20px 9px;
                   margin: 14px 14px 14px 0;
                 }
               }
@@ -533,7 +588,7 @@ body {
           .btn-next {
             width: 100%;
             height: 46px;
-            background: $pink;
+            background: var(--pink);
             padding: 0;
             font-size: 1rem;
             border-radius: 8px;
@@ -542,7 +597,7 @@ body {
               display: flex;
               justify-content: center;
               align-items: center;
-              color: $white;
+              color: var(--white);
 
               .arrow {
                 width: 20px;
@@ -554,9 +609,10 @@ body {
         }
       }
       .right-content {
-        border: 1px $light-light-gray solid;
+        border: 1px var(--circle-text-line) solid;
         border-radius: 8px;
         margin-top: 32px;
+        background: var(--bucket-bg);
 
         .bucket {
 
@@ -606,7 +662,7 @@ body {
             justify-content: space-between;
             padding: 16px;
             margin: 0 24px;
-            border-top: 1px $light-light-gray solid;
+            border-top: 1px var(--circle-text-line) solid;
             font-size: 14px;
 
             .free,
@@ -671,6 +727,8 @@ body {
         top: 50%;
         transform: translate(-50%, -50%);
         cursor: pointer;
+        background: var(--logo-url);
+        background-size: 136px 24px;
       }
       .navbar-toggle-label {
         display: none;
@@ -700,9 +758,9 @@ body {
               .circle-text {
                 display: block;
                 margin: 0 0 0 8px;
-                color: $light-gray;
+                color: var(--circle-text-line);
                 &.active {
-                  color: $dark-gray;
+                  color: var(--dark-gray);
                 }
               }
             }
@@ -713,8 +771,7 @@ body {
                 .gender-name {
                   justify-content: initial;
                   display: grid;
-                  grid-template-areas:
-                    "gender gender name name name name"
+                  grid-template-areas: "gender gender name name name name"
                   ;
 
                   .gender {
@@ -727,8 +784,7 @@ body {
                 }
                 .phone-email {
                   display: grid;
-                  grid-template-areas:
-                    "phone phone phone email email email"
+                  grid-template-areas: "phone phone phone email email email"
                   ;
 
                   .phone {
@@ -742,15 +798,18 @@ body {
                       padding: 0;
                       font-size: 12px;
                       font-weight: 700;
-                      color: $font-gray;
+                      color: var(--font-gray);
                     }
                   }
                 }
 
+                .ship-way {
+                  margin-right: 40%;
+                }
+
                 .city-address {
                   display: grid;
-                  grid-template-areas:
-                    "city city address address address address"
+                  grid-template-areas: "city city address address address address"
                   ;
 
                   .city {
@@ -765,14 +824,13 @@ body {
                       padding: 0;
                       font-size: 12px;
                       font-weight: 700;
-                      color: $font-gray;
+                      color: var(--font-gray);
                     }
                   }
                 }
                 .card-name-wrapper {
                   display: grid;
-                  grid-template-areas:
-                    "name name name name blank blank"
+                  grid-template-areas: "name name name name blank blank"
                   ;
 
                   .card-name {
@@ -781,8 +839,7 @@ body {
                 }
                 .card-wrapper {
                   display: grid;
-                  grid-template-areas:
-                    "card card card card blank blank"
+                  grid-template-areas: "card card card card blank blank"
                   ;
 
                   .card {
@@ -853,7 +910,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 64px 3rem 80px 3rem;
-    background: $footer-bg;
+    background: var(--footer-bg);
 
     .footer-logo {
       display: flex;
@@ -861,6 +918,8 @@ body {
       .logo {
         width: 136px;
         height: 24px;
+        background: var(--logo-url);
+        background-size: 136px 24px;
       }
     }
 
@@ -871,7 +930,7 @@ body {
         font-weight: 700;
       }
       .text {
-        color: $font-gray;
+        color: var(--font-gray);
         padding: 0 0 8px 0;
 
         .media {
