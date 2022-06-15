@@ -156,6 +156,9 @@ body {
   &:focus {
     border: 2px var(--font-dark) solid;
   }
+  option {
+    color: var(--circle-checked-outline);
+  }
 }
 
 %input-select-title {
