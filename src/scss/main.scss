@@ -72,23 +72,25 @@ input:invalid {
   --font-gray: #808080;
   --white: #fff;
   --dark-gray: #2A2A2A;
+  --dark-gray-to-white: #2A2A2A;
   --light-gray: #AFB1BD;
   --light-light-gray: #E6E6EB;
   --pink: #F67599;
+  --white-to-gray: #F6F7F8;
+  --light-light-to-dark-gray: #E6E6EB;
   --footer-bg: #F6F7F8;
   --divider: #E6E6EB;
   --bucket-bg: #fff;
   --circle-bg-active: #2A2A2A;
   --circle-text-line: #AFB1BD;
   --circle-text-line-active: #2A2A2A;
-  --circle-checked-outline: #2A2A2A;
   --select-label: #000;
 
-  --logo-url: url('https://i.ibb.co/FHjwPW4/logo.png');
-  --arrow-url: url('https://i.ibb.co/SXzkcjK/arrow01.png');
-  --search-url: url('https://i.ibb.co/0JS50gX/icon01.png');
-  --cart-url: url('https://i.ibb.co/Jtz2W0B/icon02.png');
-  --mode-url: url('https://i.ibb.co/N1NSSy8/icon03.png');
+  --logo-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/logo.png');
+  --arrow-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/arrow01.png');
+  --search-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/icon01.png');
+  --cart-url: url('https: //raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/icon02.png');
+  --mode-url: url('https: //raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/icon03.png');
 }
 
 :root[data-theme="dark"] {
@@ -96,24 +98,26 @@ input:invalid {
   --font-dark: #fff;
   --font-gray: #808080;
   --white: #fff;
-  --dark-gray: #fff;
+  --dark-gray: #2A2A2A;
+  --dark-gray-to-white: #fff;
   --light-gray: #AFB1BD;
   --light-light-gray: #E6E6EB;
   --pink: #F67599;
+  --white-to-gray: #333333;
+  --light-light-to-dark-gray: #808080;
   --footer-bg: #333333;
   --divider: #2A2A2A;
   --bucket-bg: #2A2A2A;
   --circle-bg-active: #fff;
   --circle-text-line: #808080;
   --circle-text-line-active: #fff;
-  --circle-checked-outline: #2A2A2A;
   --select-label: #808080;
 
-  --logo-url: url('https://i.ibb.co/RDt5Rzt/dark-logo.png');
-  --arrow-url: url('https://i.ibb.co/WD095Sq/dark-arrow01.png');
-  --search-url: url('https://i.ibb.co/NtK1VnK/dark-icon01.png');
-  --cart-url: url('https://i.ibb.co/VJdffVh/dark-icon02.png');
-  --mode-url: url('https://i.ibb.co/X84XNz3/icon04.png');
+  --logo-url: url('https: //raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/dark-logo.png');
+  --arrow-url: url('https: //raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/dark-arrow01.png');
+  --search-url: url('https: //raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/dark-icon01.png');
+  --cart-url: url('https: //raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/dark-icon02.png');
+  --mode-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/icon04.png');
 }
 
 
@@ -148,7 +152,7 @@ body {
   padding: 0 0 0 18px;
   width: 100%;
   height: 40px;
-  border: 1px var(--dark-gray) solid;
+  border: 1px var(--dark-gray-to-white) solid;
   border-radius: 4px;
   color: var(--circle-bg-active);
   background: transparent;
@@ -157,7 +161,7 @@ body {
     border: 2px var(--font-dark) solid;
   }
   option {
-    color: var(--circle-checked-outline);
+    color: var(--dark-gray);
   }
 }
 
@@ -257,7 +261,7 @@ body {
         left: 0;
         content: "";
         height: 3px;
-        background: var(--dark-gray);
+        background: var(--dark-gray-to-white);
       }
       .hamburger {
         width: 20px;
@@ -318,7 +322,7 @@ body {
             @include getStepNums(3);
 
             &:nth-child(1) .circle {
-              background: var(--circle-checked-outline);
+              background: var(--dark-gray);
             }
             &:nth-child(1) .circle::after {
               color: var(--white);
@@ -331,8 +335,8 @@ body {
               color: var(--white);
             }
             .checked.active {
-              border: 1px var(--circle-checked-outline) solid;
-              background: var(--circle-checked-outline);
+              border: 1px var(--dark-gray) solid;
+              background: var(--dark-gray);
             }
             .active {
               color: var(--circle-bg-active);
@@ -448,7 +452,7 @@ body {
                 justify-content: space-between;
                 align-items: center;
                 padding: 24px 0 0 0;
-                border: 1px var(--circle-text-line) solid;
+                border: 1px var(--light-light-to-dark-gray) solid;
                 border-radius: 4px;
                 padding: 11px 34px;
                 cursor: pointer;
@@ -469,10 +473,10 @@ body {
                   &[type="radio"] {
                     @extend %initial-style;
                     border-radius: 50%;
-                    background: var(--footer-bg);
+                    background: var(--white-to-gray);
 
                     &:checked {
-                      box-shadow: inset 0 0 0 5px var(--dark-gray);
+                      box-shadow: inset 0 0 0 5px var(--dark-gray-to-white);
 
                     }
                   }
@@ -502,7 +506,7 @@ body {
                 margin: 0 0 24px 0;
               }
               .shipment.active {
-                border: 1px var(--dark-gray) solid;
+                border: 1px var(--dark-gray-to-white) solid;
               }
 
               /* part three */
@@ -612,7 +616,7 @@ body {
         }
       }
       .right-content {
-        border: 1px var(--circle-text-line) solid;
+        border: 1px var(--light-light-to-dark-gray) solid;
         border-radius: 8px;
         margin-top: 32px;
         background: var(--bucket-bg);
@@ -665,7 +669,7 @@ body {
             justify-content: space-between;
             padding: 16px;
             margin: 0 24px;
-            border-top: 1px var(--circle-text-line) solid;
+            border-top: 1px var(--light-light-to-dark-gray) solid;
             font-size: 14px;
 
             .free,
@@ -763,7 +767,7 @@ body {
                 margin: 0 0 0 8px;
                 color: var(--circle-text-line);
                 &.active {
-                  color: var(--dark-gray);
+                  color: var(--dark-gray-to-white);
                 }
               }
             }
@@ -805,11 +809,9 @@ body {
                     }
                   }
                 }
-
                 .ship-way {
                   margin-right: 40%;
                 }
-
                 .city-address {
                   display: grid;
                   grid-template-areas: "city city address address address address"
