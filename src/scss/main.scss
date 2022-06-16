@@ -89,8 +89,8 @@ input:invalid {
   --logo-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/logo.png');
   --arrow-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/arrow01.png');
   --search-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/icon01.png');
-  --cart-url: url('https: //raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/icon02.png');
-  --mode-url: url('https: //raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/icon03.png');
+  --cart-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/icon02.png');
+  --mode-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/icon03.png');
 }
 
 :root[data-theme="dark"] {
@@ -113,10 +113,10 @@ input:invalid {
   --circle-text-line-active: #fff;
   --select-label: #808080;
 
-  --logo-url: url('https: //raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/dark-logo.png');
-  --arrow-url: url('https: //raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/dark-arrow01.png');
-  --search-url: url('https: //raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/dark-icon01.png');
-  --cart-url: url('https: //raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/dark-icon02.png');
+  --logo-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/dark-logo%20.png');
+  --arrow-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/dark-arrow01.png');
+  --search-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/dark-icon01.png');
+  --cart-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/dark-icon02.png');
   --mode-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/icon04.png');
 }
 
@@ -937,6 +937,7 @@ body {
       .text {
         color: var(--font-gray);
         padding: 0 0 8px 0;
+        cursor: pointer;
 
         .media {
           font-size: 24px;

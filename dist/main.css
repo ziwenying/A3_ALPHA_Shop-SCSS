@@ -88,8 +88,8 @@ input:invalid {
   --logo-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/logo.png');
   --arrow-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/arrow01.png');
   --search-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/icon01.png');
-  --cart-url: url('https: //raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/icon02.png');
-  --mode-url: url('https: //raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/icon03.png'); }
+  --cart-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/icon02.png');
+  --mode-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/icon03.png'); }
 
 :root[data-theme="dark"] {
   --body-bg: #000;
@@ -110,10 +110,10 @@ input:invalid {
   --circle-text-line: #808080;
   --circle-text-line-active: #fff;
   --select-label: #808080;
-  --logo-url: url('https: //raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/dark-logo.png');
-  --arrow-url: url('https: //raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/dark-arrow01.png');
-  --search-url: url('https: //raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/dark-icon01.png');
-  --cart-url: url('https: //raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/dark-icon02.png');
+  --logo-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/dark-logo%20.png');
+  --arrow-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/dark-arrow01.png');
+  --search-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/dark-icon01.png');
+  --cart-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/dark-icon02.png');
   --mode-url: url('https://raw.githubusercontent.com/ziwenying/A3_ALPHA_Shop-SCSS/main/src/image/icon04.png'); }
 
 html {
@@ -645,7 +645,8 @@ body {
       font-weight: 700; }
     .footer-container .footer-content .text {
       color: var(--font-gray);
-      padding: 0 0 8px 0; }
+      padding: 0 0 8px 0;
+      cursor: pointer; }
       .footer-container .footer-content .text .media {
         font-size: 24px;
         padding: 0 18px 0 0; } }
